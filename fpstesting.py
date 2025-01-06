@@ -33,7 +33,7 @@ def video_lag(video_part):
     print("Frames per second using video.get(cv2.CAP_PROP_FPS) : {0}".format(fps))
     width = int(video_capture.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    output_video = cv2.VideoWriter(output_video_part, cv2.VideoWriter_fourcc(*'mp4v'), 70,(width,height))
+    output_video = cv2.VideoWriter(output_video_part, cv2.VideoWriter_fourcc(*'mp4v'), 20,(width,height))
     while True:
         ret, frame = video_capture.read()
         if not ret:
