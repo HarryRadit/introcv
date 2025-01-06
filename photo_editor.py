@@ -1,6 +1,6 @@
 import cv2
 
-image_path = 'nas.jpg'
+image_path = 'me.jpg'
 
 image = cv2.imread(image_path)
 
@@ -8,7 +8,7 @@ def crop_image(image,x,y,w,h):
     cropped_image = image[y:y+h, x:x+w]
     return cropped_image
 
-cropped_image = crop_image(image, 0, 0, 900, 200)
+cropped_image = crop_image(image, 300, 150, 700, 900)
 def resize_image(image, scale_percentage):
     width = int(image.shape[1] * scale_percentage / 100)
     height = int(image.shape[0] * scale_percentage / 100)
