@@ -5,7 +5,7 @@ drawing  = False
 points = []
 mask = None
 
-image_path = 'DusttaleImpostor_Phase_22.webp'
+image_path = 'DusttaleImpostor_Phase_22.jpg'
 
 image = cv2.imread(image_path)
 

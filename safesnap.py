@@ -6,7 +6,7 @@ mask = None
 dots = None
 shapes = []
 
-image_path = 'DusttaleImpostor_Phase_22.webp'
+image_path = 'DusttaleImpostor_Phase_22.jpg'
 image = cv2.imread(image_path)
 mask = np.zeros_like(image)
 dots = np.zeros_like(image)
