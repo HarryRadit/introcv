@@ -2,7 +2,7 @@ import cv2
 
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml')
+smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
 
 
 cap = cv2.VideoCapture(0)
@@ -14,7 +14,7 @@ def detect_face(image, faces):
        roi_color = image[y:y + h, x:x + w]
        roi_gray = cv2.cvtColor(roi_color, cv2.COLOR_BGR2GRAY)
        smiles = smile_cascade.detectMultiScale(roi_gray, 1.8, 20)
-       cv2.putText(image, "smile", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+       cv2.putText(image, "eye o_o", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
    return image
 
 
