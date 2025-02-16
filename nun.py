@@ -26,7 +26,15 @@ while cap.isOpened():
         index_finger_tip = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP]
         x,y = int(index_finger_tip.x * frame.shape[1]), int(index_finger_tip.y * frame.shape[0])
 
-        cv2.circle(frame, (x,y), 10, (0,255,0),-1)
+        thumb_tip = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP]
+        thumb_ip = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_IP]
+
+        index_tip = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP]
+        if thumb_tip.y < thumb_ip.y and index_tip.y < index_tip.x:
+            cv2.putText(frame, "Thumbs up!", (10,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+        elif thumb_tip.y > thumb_ip.y and index_tip.y > index_tip.x:
+            cv2.putText(frame, "Thumbs down!", (10,50), cv2.FONT_HERSHEY_SIMPLEX, 10, (0,0,255),2)
+
     cv2.imshow("hand Trackling", frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
